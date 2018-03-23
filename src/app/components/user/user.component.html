@@ -6,6 +6,9 @@
   <li>{{address.street}}, {{address.city}}, {{address.state}}</li>
 </ul>
 
+<button (click)="toggleEdit()">Edit User</button>
+
+<div *ngIf=isEdit>
 <h3>Edit User</h3>
 <form>
   <div>
@@ -33,6 +36,7 @@
     <input type="text" [(ngModel)]="address.state" name="state">
   </div>
 </form>
+</div>
 
 
 <h4>Hobbies</h4>
@@ -49,3 +53,8 @@
   </li>
 </ul>
 
+<h3>Posts</h3>
+<div *ngFor="let post of posts">
+  <h5>{{post.title}}</h5>
+  <p>{{post.body}}</p>
+</div>
